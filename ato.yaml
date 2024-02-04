@@ -1,6 +1,6 @@
 ato-version: ^0.2.0
 builds:
   default:
-    entry: elec/src/lv2842xlvddcr.ato:Lv2842xlvddcr
+    entry: lv2842kit.ato:LV2842Kit
 dependencies:
 - generics

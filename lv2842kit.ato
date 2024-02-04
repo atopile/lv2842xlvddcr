@@ -1,0 +1,61 @@
+import SchottkyDiode from "generics/diodes.ato"
+import Capacitor from "generics/capacitors.ato"
+import Inductor from "generics/inductors.ato"
+import Buck from "generics/regulators.ato"
+import LV2842XLVDDCR from "elec/src/lv2842xlvddcr.ato"
+
+module LV2842Kit from Buck:
+    """
+    LV2842 Kit
+    Vin: 4.5V to 42V
+    Vout: 0.8V to 42V
+    Iout max: 0.6A
+    Switching Frequency: 1.1MHz
+    """
+    ic = new LV2842XLVDDCR
+    diode = new SchottkyDiode
+    input_cap = new Capacitor
+    output_cap = new Capacitor
+    inductor = new Inductor
+    boot_cap = new Capacitor
+
+    # connect power input to IC
+    power_in.vcc ~ ic.VIN
+    power_in.gnd ~ ic.GND
+
+    # enable
+    ic.SHDN_ ~ ic.VIN
+
+    # values from calcs.ipynb
+    # boot capacitor
+    boot_cap.value = 100nF to 1uF
+    boot_cap.voltage = 16V to 100V
+    boot_cap.package = "0402"
+
+    # Feedback Divider - 8V output
+    feedback_div.in ~ power_out
+    feedback_div.out ~ ic.FB
+    feedback_div.r_bottom.value = 10kohm +/- 20%
+    feedback_div.r_top.value = 94.6kohm +/- 20%
+
+    # Input Capacitor
+    power_in ~ input_cap.power
+    input_cap.value = 1uF to 10uF
+    input_cap.voltage = 30V to 69V
+
+    # Output Capacitors
+    power_out ~ output_cap.power
+    output_cap.value = 3uF to 10uF
+    output_cap.voltage = 16V to 100V
+
+    # Inductor
+    ic.SW ~ inductor.1; inductor.2 ~ power_out.vcc
+    inductor.inductance = 30uH to 60uH
+    inductor.current = 0.6A to 2A
+
+    # Diode
+    diode.anode ~ power_out.gnd
+    diode.cathode ~ ic.SW
+    diode.average_rectified_current = 1A to 10A
+    diode.forward_voltage = 0.3V to 0.8V
+    diode.reverse_voltage = 30V to 100V
