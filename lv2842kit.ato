@@ -31,6 +31,8 @@ module LV2842Kit from Buck:
     boot_cap.value = 100nF to 1uF
     boot_cap.voltage = 16V to 100V
     boot_cap.package = "0402"
+    boot_cap.1 ~ ic.CB
+    boot_cap.2 ~ ic.VIN
 
     # Feedback Divider - 8V output
     feedback_div.in ~ power_out
