@@ -7,7 +7,7 @@ The LV2841 and LV2842 are PWM DC/DC buck (stepdown) regulators. With a wide inpu
 ## Usage Example
 
 ```
-import LV284x from "lv2842/lv2842.ato"
+import LV2842 from "lv2842/lv2842.ato"
 import Power from "generics/interfaces.ato"
 
 module BuckRegulatorCircuit:
