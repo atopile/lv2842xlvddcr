@@ -12,7 +12,7 @@ import Power from "generics/interfaces.ato"
 
 module BuckRegulatorCircuit:
    inputPower = new Power
-   buckRegulator = new LV284x
+   buckRegulator = new LV2842
    
    # Configure input power interface for buck regulator
    inputPower.voltage = "4V to 40V"  # Wide input voltage range
