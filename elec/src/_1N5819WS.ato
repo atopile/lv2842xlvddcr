@@ -1,8 +1,0 @@
-component _1N5819WS:
-    # component _1N5819WS
-    footprint = "SOD-323_L1.8-W1.3-LS2.5-RD"
-    lcsc_id = "C191023"
-    # pins
-    signal K ~ pin 1
-    signal A ~ pin 2
-

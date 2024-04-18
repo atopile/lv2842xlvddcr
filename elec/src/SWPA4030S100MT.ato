@@ -1,8 +1,0 @@
-component SWPA4030S100MT:
-    # component SWPA4030S100MT
-    footprint = "IND-SMD_L4.0-W4.0"
-    lcsc_id = "C38117"
-    # pins
-    signal _2 ~ pin 2
-    signal _1 ~ pin 1
-
