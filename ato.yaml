@@ -4,6 +4,6 @@ builds:
     entry: lv2842kit.ato:LV2842Kit
 dependencies:
 - name: generics
-  version_spec: '@8adfad2eecc03aa27f9e75b3bf489427c898637c'
+  version_spec: ^v4.4.0
   link_broken: false
   path: .ato/modules/generics
