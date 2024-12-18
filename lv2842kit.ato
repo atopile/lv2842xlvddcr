@@ -68,10 +68,8 @@ module LV2842Kit from Buck:
     i_ripple = 0.2A to 0.3A # typically ~ 30% of Iout
     v_ripple = 0V to 0.2V # typically ~ 10% of Vout
 
-
     assert inductor.inductance within ((v_in - v_out) * v_out)/(v_in * i_ripple * f_switching)
     assert i_ripple * (output_cap.esr + (1 / (8 * f_switching * output_cap.value))) within v_ripple
-
 
     # Diode
     diode.anode ~ power_out.gnd
