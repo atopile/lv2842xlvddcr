@@ -1,9 +1,6 @@
-ato-version: ^0.2.0
+ato-version: ^0.3.0
 builds:
   default:
-    entry: lv2842kit.ato:LV2842Kit
+    entry: elec/src/lv284xx.ato:LV2842XReferenceDesign
 dependencies:
-- name: generics
-  version_spec: ^v4.4.0
-  link_broken: false
-  path: .ato/modules/generics
+  - generics
