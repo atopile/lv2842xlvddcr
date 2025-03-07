@@ -66,8 +66,8 @@ module LV2842XReferenceDesign from AdjustableRegulator:
     # Set ouput voltage with the resistor divider
     feedback_div.power ~ power_out
     feedback_div.output ~ ic.feedback
-    assert v_ref within 0.765V +/-0.1% # TODO: Datasheet does not specify a range
-    assert i_q within 100uA +/- 10%
+    assert v_ref within 0.765V +/-0.1% # Datasheet does not specify a range
+    assert i_q within 100uA +/- 10% # Manually picked sane value
     assert feedback_div.r_bottom.resistance within 1kohm to 100kohm
     feedback_div.r_top.package = "R0402"
     feedback_div.r_bottom.package = "R0402"
@@ -87,7 +87,6 @@ module LV2842XReferenceDesign from AdjustableRegulator:
     # Output Capacitors
     output_cap.power ~ power_out
     output_cap.value = 10uF +/- 20%
-    # output_cap.esr = 0.1ohm to 0.2ohm # TODO: Not available in faebryk mod yet
     output_cap.package = "C0805"
 
     # Diode
@@ -99,9 +98,6 @@ module LV2842XReferenceDesign from AdjustableRegulator:
 
     ripple_current = 0.2A to 0.3A # typically ~ 30% of Iout
     v_ripple = 0V to 0.2V # typically ~ 10% of Vout
-
-    #assert inductor.inductance within ((power_in.voltage - power_out.voltage) * power_out.voltage)/(power_in.voltage * ripple_current * switching_frequency)
-    #assert v_ripple within ripple_current * (output_cap.esr + (1 / (8 * f_switching * output_cap.value)))
 
 
 component Diode_1N5819WS from Diode:
@@ -120,8 +116,6 @@ component SWPA4030S100MT from Inductor:
     p1 ~ pin 1
     p2 ~ pin 2
     assert inductance is 10uH +/- 20%
-
-
 
 component LV2842X from _LV2842X:
     lcsc_id = "C225807"
