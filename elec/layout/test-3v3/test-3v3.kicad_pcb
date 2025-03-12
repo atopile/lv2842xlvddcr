@@ -77,11 +77,11 @@
             (outputdirectory "")))
     (net 0 "")
     (net 1 "hv")
-    (net 2 "gnd")
+    (net 2 "gnd-1")
     (net 3 "hv-1")
-    (net 4 "cathode")
+    (net 4 "SW")
     (net 5 "CB")
-    (net 6 "gnd-1")
+    (net 6 "gnd")
     (net 7 "line")
     (footprint "lib:SOD-323_L1.8-W1.3-LS2.5-RD"
         (layer "F.Cu")
@@ -246,14 +246,14 @@
             (layers "F.Cu" "F.Paste" "F.Mask")
             (remove_unused_layers no)
             (uuid "dbe1f3ef-6a2d-445e-96d4-9ed355e57dd4")
-            (net 6 "gnd-1"))
+            (net 6 "gnd"))
         (pad "1" smd rect
             (at -1.17 0 0)
             (size 1 0.75)
             (layers "F.Cu" "F.Paste" "F.Mask")
             (remove_unused_layers no)
             (uuid "106c32de-cafc-4dc0-88e3-dba421ee6ca2")
-            (net 4 "cathode"))
+            (net 4 "SW"))
         (model "${KIPRJMOD}/../../../build/footprints/footprints.3dshapes/SOD-323_L1.7-W1.3-H1.1-LS2.5.step"
             (offset
                 (xyz -0.14 0 0))
@@ -647,7 +647,7 @@
             (layers "F.Cu" "F.Paste" "F.Mask")
             (remove_unused_layers no)
             (uuid "2ce5f772-6898-425d-86aa-b6e11b65f783")
-            (net 2 "gnd"))
+            (net 2 "gnd-1"))
         (pad "1" smd rect
             (at -1 0 0)
             (size 1.41 1.35)
@@ -862,7 +862,7 @@
             (layers "F.Cu" "F.Paste" "F.Mask")
             (remove_unused_layers no)
             (uuid "b229da47-4591-4b9b-a95e-6d8b1202cdd6")
-            (net 4 "cathode"))
+            (net 4 "SW"))
         (pad "1" smd rect
             (at -0.55 0 0)
             (size 0.79 0.54)
@@ -1048,7 +1048,7 @@
             (layers "F.Cu" "F.Paste" "F.Mask")
             (remove_unused_layers no)
             (uuid "1563f360-6d77-430d-9097-fe6664d3d7b1")
-            (net 4 "cathode"))
+            (net 4 "SW"))
         (model "${KIPRJMOD}/../../../build/footprints/footprints.3dshapes/IND-SMD_L4.0-W4.0-H1.9.step"
             (offset
                 (xyz 0 0 0))
@@ -1220,7 +1220,7 @@
             (layers "F.Cu" "F.Paste" "F.Mask")
             (remove_unused_layers no)
             (uuid "6e576b76-9191-4f7d-aeb2-1ef9e77678a3")
-            (net 2 "gnd"))
+            (net 2 "gnd-1"))
         (pad "1" smd rect
             (at 1.35 0.95 0)
             (size 1.1 0.6)
@@ -1234,7 +1234,7 @@
             (layers "F.Cu" "F.Paste" "F.Mask")
             (remove_unused_layers no)
             (uuid "c5f47c37-9b11-48dc-b75c-cb5b5a1e3f0c")
-            (net 4 "cathode"))
+            (net 4 "SW"))
         (pad "5" smd rect
             (at -1.35 0 0)
             (size 1.1 0.6)
@@ -1463,7 +1463,7 @@
             (layers "F.Cu" "F.Paste" "F.Mask")
             (remove_unused_layers no)
             (uuid "4650f469-e5ea-4649-8175-1beecafeb22c")
-            (net 6 "gnd-1"))
+            (net 6 "gnd"))
         (pad "1" smd rect
             (at -1 0 0)
             (size 1.41 1.35)
@@ -1642,7 +1642,7 @@
             (layers "F.Cu" "F.Paste" "F.Mask")
             (remove_unused_layers no)
             (uuid "a2f8e33e-fabd-47ea-823a-c779665a9987")
-            (net 6 "gnd-1"))
+            (net 6 "gnd"))
         (pad "1" smd rect
             (at -0.43 0 0)
             (size 0.57 0.54)
