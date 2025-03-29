@@ -80,12 +80,12 @@ module LV2842XReferenceDesign from AdjustableRegulator:
 
     # Input Capacitor
     input_cap.power ~ power_in
-    input_cap.value = 1uF to 10uF
+    input_cap.capacitance = 1uF to 10uF
     input_cap.package = "C0805"
 
     # Output Capacitors
     output_cap.power ~ power_out
-    output_cap.value = 10uF +/- 20%
+    output_cap.capacitance = 10uF +/- 20%
     output_cap.package = "C0805"
 
     # Diode
