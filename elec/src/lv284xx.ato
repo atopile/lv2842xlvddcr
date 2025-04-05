@@ -70,6 +70,8 @@ module LV2842XReferenceDesign from AdjustableRegulator:
     assert i_q within 10uA to 100uA # Manually picked sane value
     feedback_div.r_top.package = "R0402"
     feedback_div.r_bottom.package = "R0402"
+    feedback_div.r_top.resistance = 1kohm to 1Mohm
+    feedback_div.r_bottom.resistance = 1kohm to 1Mohm
 
     power_in ~ ic.power_in
 

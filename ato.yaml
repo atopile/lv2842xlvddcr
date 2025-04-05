@@ -1,5 +1,7 @@
 ato-version: ^0.3.0
 builds:
+  default:
+    entry: elec/src/lv284xx.ato:LV2842XReferenceDesign
   test-8v:
     entry: elec/src/lv284xx.ato:Test8V
   test-5v:
